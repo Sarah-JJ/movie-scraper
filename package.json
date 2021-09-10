@@ -1,0 +1,9 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "selenium-webdriver": "^4.0.0-rc-1"
+  },
+  "devDependencies": {}
+}
