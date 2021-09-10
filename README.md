@@ -12,6 +12,8 @@ I created this project, because I need some mock data for a personal frontend pr
 ***
 Download or clone the project, then in the project directory, type the following command:
 
-``node index.js --movies={'underworld','interstellar','the martian'} --swaggerExampleSections={'HighestRated','Popular'}``
+```
+node index.js --movies={'underworld','interstellar','the martian'} --swaggerExampleSections={'HighestRated','Popular'}
+```
 
 This will create the Swagger file (swagger.json) in the same directory.
