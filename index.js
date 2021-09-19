@@ -6,21 +6,16 @@ const {CLI_OPTIONS} =require('./constants');
 createSwagger();
 
 function createSwagger() {
-    let movieTitles = parseMovieTitles(argv);
-    let swaggerExampleSections = parseSwaggerExampleSections(argv);
+    let movieTitles = getArgAsArray(argv, CLI_OPTIONS.MOVIES);
+    let swaggerExampleSections = getArgAsArray(argv, CLI_OPTIONS.SWAGGER_SECTIONS);
 
     getMovies(movieTitles).then(movies => {
         createSwaggerFile(movies, swaggerExampleSections);
     });
 }
 
-function parseMovieTitles() {
-    let movieTitleArgs = argv[CLI_OPTIONS.MOVIES];
-    return typeof movieTitleArgs === 'object' ? movieTitleArgs : [movieTitleArgs];
-}
-
-function parseSwaggerExampleSections() {
-    let swaggerExampleSectionArgs = argv[CLI_OPTIONS.SWAGGER_SECTIONS];
-    return typeof swaggerExampleSectionArgs === 'object' ? swaggerExampleSectionArgs : [swaggerExampleSectionArgs];
+function getArgAsArray(argv, argName) {
+    let arg = argv[argName];
+    return typeof arg === 'object' ? arg : [arg];
 }
 
