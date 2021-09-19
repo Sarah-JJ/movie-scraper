@@ -25,7 +25,9 @@ async function getMovie(title, driver) {
 
     movie.overview = await getMovieOverview(link, driver);
 
-    movie.trailerUrl = await getMovieTrailerLink(title, driver);
+    let youtubeUrlEncodedTitle = encodeURIComponent(title + ' ' + 'movie trailer');
+
+    movie.trailerUrl = await getMovieTrailerLink(youtubeUrlEncodedTitle, driver);
 
     return movie;
 }
